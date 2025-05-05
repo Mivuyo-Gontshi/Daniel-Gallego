@@ -13,6 +13,7 @@ A responsive e-commerce website for Daniel Gallego, a contemporary South African
 - [Technologies Used](#technologies-used)
 - [License](#license)
 - [Contact](#contact)
+- [Author](#author)
 
 ## Project Description
 This website serves as the online presence for Daniel Gallego, a premium South African clothing retailer specializing in contemporary African-inspired fashion. The site showcases products, provides company information, and includes contact functionality.
@@ -65,5 +66,7 @@ For inquiries about this project:
 - Physical Stores: Johannesburg, Cape Town, Durban, eGqiberha,Bloemfontein,Pretoria
 
 ---
-
+## Author
+Daniel Gallego Website – Developed by Mivuyo Gontshi
+For educational purposes, 2025.
 **Daniel Gallego** © 2025 - Premium South African Fashion

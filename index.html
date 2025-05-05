@@ -1,32 +1,63 @@
 <!DOCTYPE html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Home</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <header>
-           <a href="index.html"><img class="logo" src="Images/logo.png" alt="logo" height="75" width="75"></a><!--Logo-->
-            <nav>
-               <ul class="nav_links"><!--Navigation Bar-->
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Shop</a></li>
-                <li><a href="enquiry.html">Enquiry</a></li>
-               </ul> 
-            </nav>
-            <a class="cta" href="contact.html"><button>Contact</button></a><!--CSS Button-->
-        </header>
-        <footer>
-            <p>&copy; 2025 Daniel Gallego Clothing. All rights reserved.</p>
-            <p>Follow us on social media: 
-                <a href="#">Facebook</a> | 
-                <a href="#">Instagram</a> | 
-                <a href="#">Twitter</a>
-            </p>
-        </footer>
-    </body>
-</html>    
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daniel Gallego Clothing</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="main-header">
+    <picture>
+      <source srcset="Images/logo-small.png" media="(max-width: 600px)">
+      <img class="logo" src="Images/logo.png" alt="Daniel Gallego Logo">
+    </picture>
+    <nav>
+      <ul class="nav_links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+      </ul>
+    </nav>
+    <div class="cta">
+      <button>Shop Now</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Welcome to Daniel Gallego</h1>
+      <p>Where passion meets fashion. Discover premium style for every occasion.</p>
+    </section>
+  
+    <section>
+      <h2>Our Mission</h2>
+      <p>At Daniel Gallego, we believe fashion is more than what you wear — it's a reflection of identity, culture, and confidence. Our mission is to empower individuals through timeless and trend-setting apparel that celebrates self-expression and sophistication.</p>
+    </section>
+  
+    <section>
+      <h2>Why Choose Us?</h2>
+      <ul>
+        <li><strong>Premium Quality:</strong> Every piece is crafted with care and high-grade materials.</li>
+        <li><strong>Modern Designs:</strong> Fashion-forward collections for men and women.</li>
+        <li><strong>Customer Focused:</strong> Exceptional service and support, online and in-store.</li>
+      </ul>
+    </section>
+  
+    <section>
+      <h2>Explore Our Latest Collection</h2>
+      <p>From streetwear to formalwear, our 2025 line delivers fresh looks and timeless essentials. Visit our <a href="services.html">Services</a> page to learn more or <a href="enquiry.html">send us an enquiry</a> to personalize your shopping experience.</p>
+      <div style="text-align:center; margin-top: 20px;">
+        <button onclick="location.href='services.html'">Browse Collection</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Daniel Gallego. All rights reserved.</p>
+  </footer>
+</body>
+</html>

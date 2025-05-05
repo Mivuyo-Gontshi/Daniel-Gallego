@@ -7,103 +7,131 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles.css">
         <style>
-            /* Grey color scheme - Main section only */
             main {
-                background-color: #808080;
-                padding: 20px;
-                max-width: 800px;
-                margin: 20px auto;
-                font-family: Arial, sans-serif;
-                border-radius: 5px;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+              background-color: #f5f5f5;
+              padding: 30px;
+              margin: 20px auto;
+              max-width: 1000px;
+              font-family: 'Montserrat', sans-serif;
+              border-radius: 5px;
+              box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             }
-    
-            main h2 {
-                color: #333;
-                text-align: center;
-                margin-bottom: 20px;
-                border-bottom: 1px solid #ddd;
-                padding-bottom: 10px;
-            }
-    
-            main fieldset {
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                padding: 15px;
-                margin-bottom: 20px;
-                background-color: Grey;
-            }
-    
-            main legend {
-                color:  #555;
-                font-weight: bold;
-                padding: 0 10px;
-            }
-    
+        
+            main h1,
+            main h2,
+            main h3,
             main label {
-                display: block;
-                margin: 10px 0 5px;
-                color:  #444;
+              color: #222;
             }
-    
+        
+            main h1 {
+              text-align: center;
+              border-bottom: 2px solid #ccc;
+              padding-bottom: 15px;
+            }
+        
+            main section {
+              background-color: #ffffff;
+              padding: 20px;
+              margin-bottom: 25px;
+              border-radius: 5px;
+              box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+            }
+        
+            main article {
+              background-color: #fafafa;
+              padding: 15px;
+              margin-bottom: 15px;
+              border-left: 4px solid #e63946;
+            }
+        
+            main address {
+              font-style: normal;
+              line-height: 1.6;
+            }
+        
+            main form {
+              background-color: #ffffff;
+              padding: 20px;
+              border-radius: 5px;
+            }
+        
+            main label {
+              display: block;
+              margin: 10px 0 5px;
+              font-weight: bold;
+            }
+        
             main input[type="text"],
             main input[type="email"],
-            main input[type="tel"],
-            main input[type="number"],
             main select,
             main textarea {
-                width: 100%;
-                padding: 8px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                margin-bottom: 10px;
-                background-color: #808080;
+              width: 100%;
+              padding: 10px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              background-color: #fdfdfd;
+              margin-bottom: 15px;
+              font-family: 'Montserrat', sans-serif;
             }
-    
+        
             main textarea {
-                resize: vertical;
-                min-height: 100px;
+              height: 150px;
+              resize: vertical;
             }
-    
-            main input[type="radio"] {
-                margin-right: 10px;
-            }
-    
+        
             main button {
-                background-color:  #808080;
-                color: white;
-                border: none;
-                padding: 10px 20px;
-                margin-right: 10px;
-                border-radius: 4px;
-                cursor: pointer;
+              background-color: #e63946;
+              color: white;
+              border: none;
+              padding: 12px 25px;
+              border-radius: 4px;
+              cursor: pointer;
+              font-size: 16px;
+              font-family: 'Montserrat', sans-serif;
             }
-    
+        
             main button:hover {
-                background-color: #555;
+              background-color: #d62828;
             }
-    
-            main button[type="reset"] {
-                background-color: #999;
+        
+            main table {
+              width: 100%;
+              border-collapse: collapse;
+              background-color: #ffffff;
             }
-    
-            main button[type="reset"]:hover {
-                background-color: #888;
+        
+            main th,
+            main td {
+              padding: 12px;
+              text-align: left;
+              border-bottom: 1px solid #ccc;
             }
-        </style>
+        
+            main th {
+              background-color: #f0f0f0;
+              color: #222;
+            }
+          </style>
     </head>
     <body>
-        <header>
-            <a href="index.html"><img class="logo" src="Images/logo.png" alt="logo" height="75" width="75"></a><!--Logo-->
-            <nav>
-               <ul class="nav_links"><!--Navigation Bar-->
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Shop</a></li>
-                <li><a href="enquiry.html">Enquiry</a></li>
-               </ul> 
-            </nav>
-            <a class="cta" href="contact.html"><button>Contact</button></a><!--CSS Button-->
+        <header class="main-header">
+          <picture>
+            <source srcset="Images/logo-small.png" media="(max-width: 600px)">
+            <img class="logo" src="Images/logo.png" alt="Daniel Gallego Logo">
+          </picture>
+          <nav>
+            <ul class="nav_links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="enquiry.html">Enquiry</a></li>
+            </ul>
+          </nav>
+          <div class="cta">
+            <button>Shop Now</button>
+          </div>
         </header>
         <main>
             <h2>Product Enquiry</h2>

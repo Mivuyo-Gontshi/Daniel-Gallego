@@ -1,156 +1,163 @@
 <!DOCTYPE html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Shop</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
-        <style>
-            /* Grey color scheme ONLY for main section */
-            main {
-                background-color: #808080;
-                padding: 20px;
-                font-family: Arial, sans-serif;
-                max-width: 1200px;
-                margin: 0 auto;
-            }
-            
-            main h2 {
-                color:  #808080;
-                text-align: center;
-                margin-bottom: 30px;
-                font-size: 28px;
-            }
-            
-            .products-container {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-                gap: 20px;
-            }
-            
-            .product-card {
-                background: white;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                padding: 15px;
-                transition: all 0.3s ease;
-            }
-            
-            .product-card:hover {
-                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-                transform: translateY(-3px);
-            }
-            
-            .product-image {
-                width: 100%;
-                height: 200px;
-                object-fit: cover;
-                border-bottom: 1px solid #eee;
-                margin-bottom: 10px;
-            }
-            
-            .product-title {
-                color: #444;
-                font-size: 18px;
-                margin: 10px 0;
-            }
-            
-            .product-description {
-                color: #777;
-                font-size: 14px;
-                margin-bottom: 10px;
-            }
-            
-            .product-price {
-                color: #333;
-                font-weight: bold;
-                font-size: 16px;
-                margin: 10px 0;
-            }
-            
-            .add-to-cart {
-                background-color: #666;
-                color: Grey;
-                border: none;
-                padding: 8px 15px;
-                width: 100%;
-                border-radius: 3px;
-                cursor: pointer;
-                transition: background-color 0.3s;
-            }
-            
-            .add-to-cart:hover {
-                background-color: #555;
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <a href="index.html"><img class="logo" src="Images/logo.png" alt="logo" height="75" width="75"></a><!--Logo-->
-            <nav>
-               <ul class="nav_links"><!--Navigation Bar-->
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Shop</a></li>
-                <li><a href="enquiry.html">Enquiry</a></li>
-               </ul> 
-            </nav>
-            <a class="cta" href="contact.html"><button>Contact</button></a><!--CSS Button-->
-        </header>
-        <main>
-            <h2>Our Collection</h2>
-            
-            <!-- Product 1 -->
-            <section>
-                <img src="images/products/product1.jpeg" alt="Heritage Print Shirt" width="300">
-                <h3>Heritage Print Shirt</h3>
-                <p>Vibrant African-inspired button-up shirt</p>
-                <p><strong>R499.99</strong></p>
-                <button>Add to Cart</button>
-            </section>
-    
-            <!-- Product 2 -->
-            <section>
-                <img src="images/products/product2.jpeg" alt="Cape Town Linen Pants" width="300">
-                <h3>Cape Town Linen Pants</h3>
-                <p>Lightweight linen with traditional embroidery</p>
-                <p><strong>R649.99</strong></p>
-                <button>Add to Cart</button>
-            </section>
-    
-            <!-- Product 3 -->
-            <section>
-                <img src="images/products/product3.jpeg" alt="Kente Wrap Dress" width="300">
-                <h3>Kente Wrap Dress</h3>
-                <p>Elegant dress with authentic Kente accents</p>
-                <p><strong>R899.99</strong></p>
-                <button>Add to Cart</button>
-            </section>
-    
-            <!-- Product 4 -->
-            <section>
-                <img src="images/products/product4.jpeg" alt="Safari Denim Jacket" width="300">
-                <h3>Safari Denim Jacket</h3>
-                <p>Reinforced denim with beadwork details</p>
-                <p><strong>R1,199.99</strong></p>
-                <button>Add to Cart</button>
-            </section>
-    
-            <!-- Product 5 -->
-            <section>
-                <img src="images/products/product5.jpeg" alt="Zulu Beaded Necklace" width="300">
-                <h3>Zulu Beaded Necklace</h3>
-                <p>Handcrafted by Zulu artisans</p>
-                <p><strong>R349.99</strong></p>
-                <button>Add to Cart</button>
-                <footer>
-                    <p>&copy; 2025 Daniel Gallego Clothing. All rights reserved.</p>
-                    <p>Follow us on social media: 
-                        <a href="#">Facebook</a> | 
-                        <a href="#">Instagram</a> | 
-                        <a href="#">Twitter</a>
-                    </p>
-                </footer>
-    </body>
-</html>    
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    main { 
+      background-color: whitesmoke;
+      padding: 2rem;
+      font-family: 'Montserrat', sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    main h2 {
+      color: black;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    section {
+      background-color: #fff;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    section img {
+      width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    section h3 {
+      font-size: 1.25rem;
+      color: #333;
+      margin: 0.5rem 0;
+    }
+
+    section p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+
+    section p strong {
+      color: #222;
+    }
+
+    button {
+      background-color: #444;
+      color: #fff;
+      border: none;
+      padding: 0.75rem;
+      width: 100%;
+      font-size: 1rem;
+      border-radius: 0.375rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #222;
+    }
+
+    @media (min-width: 768px) {
+      main {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+      h2 {
+        grid-column: 1 / -1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <picture>
+      <source srcset="Images/logo-small.png" media="(max-width: 600px)">
+      <img class="logo" src="Images/logo.png" alt="Daniel Gallego Logo">
+    </picture>
+    <nav>
+      <ul class="nav_links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+      </ul>
+    </nav>
+    <div class="cta">
+      <button>Shop Now</button>
+    </div>
+  </header>
+
+  <main>
+    <h2>Our Collection</h2>
+
+    <!-- Product 1 -->
+    <section>
+      <img src="Images/products/product1.jpeg" alt="Heritage Print Shirt">
+      <h3>Heritage Print Shirt</h3>
+      <p>Vibrant African-inspired button-up shirt</p>
+      <p><strong>R499.99</strong></p>
+      <button>Add to Cart</button>
+    </section>
+
+    <!-- Product 2 -->
+    <section>
+      <img src="Images/products/product2.jpeg" alt="Cape Town Linen Pants">
+      <h3>Cape Town Linen Pants</h3>
+      <p>Lightweight linen with traditional embroidery</p>
+      <p><strong>R649.99</strong></p>
+      <button>Add to Cart</button>
+    </section>
+
+    <!-- Product 3 -->
+    <section>
+      <img src="Images/products/product3.jpeg" alt="Kente Wrap Dress">
+      <h3>Kente Wrap Dress</h3>
+      <p>Elegant dress with authentic Kente accents</p>
+      <p><strong>R899.99</strong></p>
+      <button>Add to Cart</button>
+    </section>
+
+    <!-- Product 4 -->
+    <section>
+      <img src="Images/products/product4.jpeg" alt="Safari Denim Jacket">
+      <h3>Safari Denim Jacket</h3>
+      <p>Reinforced denim with beadwork details</p>
+      <p><strong>R1,199.99</strong></p>
+      <button>Add to Cart</button>
+    </section>
+
+    <!-- Product 5 -->
+    <section>
+      <img src="Images/products/product5.jpeg" alt="Zulu Beaded Necklace">
+      <h3>Zulu Beaded Necklace</h3>
+      <p>Handcrafted by Zulu artisans</p>
+      <p><strong>R349.99</strong></p>
+      <button>Add to Cart</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Daniel Gallego. All rights reserved.</p>
+  </footer>
+</body>
+</html>
