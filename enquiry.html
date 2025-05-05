@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Enquiry</title>
+        <meta name="description" content="">
+        <meta name="viewpiont" content="width=device-width", initial-scale="1">
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            /* Grey color scheme - Main section only */
+            main {
+                background-color: #808080;
+                padding: 20px;
+                max-width: 800px;
+                margin: 20px auto;
+                font-family: Arial, sans-serif;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+    
+            main h2 {
+                color: #333;
+                text-align: center;
+                margin-bottom: 20px;
+                border-bottom: 1px solid #ddd;
+                padding-bottom: 10px;
+            }
+    
+            main fieldset {
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                padding: 15px;
+                margin-bottom: 20px;
+                background-color: Grey;
+            }
+    
+            main legend {
+                color:  #555;
+                font-weight: bold;
+                padding: 0 10px;
+            }
+    
+            main label {
+                display: block;
+                margin: 10px 0 5px;
+                color:  #444;
+            }
+    
+            main input[type="text"],
+            main input[type="email"],
+            main input[type="tel"],
+            main input[type="number"],
+            main select,
+            main textarea {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                margin-bottom: 10px;
+                background-color: #808080;
+            }
+    
+            main textarea {
+                resize: vertical;
+                min-height: 100px;
+            }
+    
+            main input[type="radio"] {
+                margin-right: 10px;
+            }
+    
+            main button {
+                background-color:  #808080;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                margin-right: 10px;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+    
+            main button:hover {
+                background-color: #555;
+            }
+    
+            main button[type="reset"] {
+                background-color: #999;
+            }
+    
+            main button[type="reset"]:hover {
+                background-color: #888;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <a href="index.html"><img class="logo" src="images/logo.png" alt="logo" height="75" width="75"></a><!--Logo-->
+            <nav>
+               <ul class="nav_links"><!--Navigation Bar-->
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Shop</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+               </ul> 
+            </nav>
+            <a class="cta" href="contact.html"><button>Contact</button></a><!--CSS Button-->
+        </header>
+        <main>
+            <h2>Product Enquiry</h2>
+            
+            <form action="submit_enquiry.php" method="post">
+                <fieldset>
+                    <legend>Your Details</legend>
+                    
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone">
+                </fieldset>
+    
+                <fieldset>
+                    <legend>Enquiry Information</legend>
+                    
+                    <label for="product">Product of Interest:</label>
+                    <select id="product" name="product">
+                        <option value="">-- Select a product --</option>
+                        <option value="heritage-shirt">Heritage Print Shirt</option>
+                        <option value="linen-pants">Cape Town Linen Pants</option>
+                        <option value="kente-dress">Kente Wrap Dress</option>
+                        <option value="denim-jacket">Safari Denim Jacket</option>
+                        <option value="beaded-necklace">Zulu Beaded Necklace</option>
+                        <option value="other">Other</option>
+                    </select>
+                    
+                    <label for="size">Size (if applicable):</label>
+                    <select id="size" name="size">
+                        <option value="">-- Select size --</option>
+                        <option value="xs">XS</option>
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                    </select>
+                    
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" name="message" rows="5"></textarea>
+                </fieldset>
+    
+                <fieldset>
+                    <legend>Preferred Contact Method</legend>
+                    <input type="radio" id="contact-email" name="contact-method" value="email" checked>
+                    <label for="contact-email">Email</label><br>
+                    
+                    <input type="radio" id="contact-phone" name="contact-method" value="phone">
+                    <label for="contact-phone">Phone</label><br>
+                    
+                    <input type="radio" id="contact-either" name="contact-method" value="either">
+                    <label for="contact-either">Either</label>
+                </fieldset>
+    
+                <button type="submit">Submit Enquiry</button>
+                <button type="reset">Clear Form</button>
+            </form>
+        </main>
+        <footer>
+            <p>&copy; 2025 Daniel Gallego Clothing. All rights reserved.</p>
+            <p>Follow us on social media: 
+                <a href="#">Facebook</a> | 
+                <a href="#">Instagram</a> | 
+                <a href="#">Twitter</a>
+            </p>
+        </footer>
+    </body>
+</html>    
