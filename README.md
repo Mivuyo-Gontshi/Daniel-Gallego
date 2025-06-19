@@ -1,6 +1,6 @@
 #Daniel-Gallego-Clothing-Retail-Website
 
-![Daniel Gallego Logo](wede/images/logo.png)
+![Daniel Gallego Logo](Images/logo.png)
 
 A responsive e-commerce website for Daniel Gallego, a contemporary South African clothing brand.
 
@@ -26,15 +26,14 @@ This website serves as the online presence for Daniel Gallego, a premium South A
 - **Modern Styling**: Clean grey color scheme throughout
 
 ## File Structure
- ├── index.html # Homepage
+├── index.html # Homepage
 ├── products.html # Product catalog
 ├── about.html # About the brand
 ├── contact.html # Contact information and form
 ├── enquiry.html # Product enquiry form
 ├── contract.html # Sales contract template
-├── images/ # Product and branding images
-│ ├── products/
-            product1,product2,product3,product4,product5
+├─| images/ # Product and branding images
+│ ├── products/product1,product2,product3,product4,product5
 │ └── logo.png
 └── README.md
 ## Installation
@@ -81,6 +80,11 @@ For educational purposes, 2025.
 - Improved accessibility and color contrast
 - Responsive, professional button and search bar styling
 - Local storage for enquiry and contact forms
+- Form validation and submission handling
+- Interactive product lightbox gallery
+- Fixed product search functionality
+- Google Maps integration for store locations
+- Shopping cart with PayPal integration
 
 ### Changelog
 | Date       | Change Description                     |
@@ -90,8 +94,18 @@ For educational purposes, 2025.
 | 2025-06-18 | Added product search functionality     |
 | 2025-06-18 | Improved footer and navigation styling |
 | 2025-06-18 | Enhanced accessibility and color contrast|
-| 2025-06-18 | Added local storage for forms          |
+| 2025-06-18 | Added local storage for forms  |
+| 2025-06-18 | Fixed form submission functionality   |
+| 2025-06-18 | Implemented Lightbox for products     |
+| 2025-06-18 | Added interactive Google Maps         |
+| 2025-06-18 | Debugged product search feature       |
+
 
 ### License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+### References:
+- [Lightbox2](https://lokeshdhakar.com/projects/lightbox2/)
+- [Google Maps API](https://developers.google.com/maps/documentation/javascript/overview)
+- [PayPal Integration](https://developer.paypal.com/docs/checkout/)

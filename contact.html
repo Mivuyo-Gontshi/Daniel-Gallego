@@ -277,6 +277,29 @@ contactForm.addEventListener('submit', async (e) => {
   // If you have a backend, replace the above with a real fetch call.
 });
 </script>
+<script>
+  document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Create feedback element if it doesn't exist
+    let feedback = document.querySelector('.form-feedback');
+    if (!feedback) {
+      feedback = document.createElement('div');
+      feedback.className = 'form-feedback';
+      document.querySelector('form').appendChild(feedback);
+    }
+    
+    // Show success message
+    feedback.innerHTML = `
+      <div style="background:#4CAF50;color:white;padding:15px;border-radius:4px;margin-top:20px">
+        Thank you! Your message has been submitted successfully.
+      </div>
+    `;
+    
+    // Clear form
+    setTimeout(() => e.target.reset(), 1000);
+  });
+</script>
   <footer class="footer">
     <div style="padding:1rem 0;">
       <p>&copy; 2025 Daniel Gallego. All rights reserved.</p>

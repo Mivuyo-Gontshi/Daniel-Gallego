@@ -137,3 +137,11 @@ function showToast(msg) {
     setTimeout(() => { toast.style.display = 'none'; }, 500);
   }, 2000);
 }
+// Replace search in product.html
+document.getElementById('search-input').addEventListener('input', function(e) {
+  const term = e.target.value.toLowerCase();
+  document.querySelectorAll('main > section').forEach(section => {
+    const title = section.querySelector('h3').textContent.toLowerCase();
+    section.style.display = title.includes(term) ? 'block' : 'none';
+  });
+});
