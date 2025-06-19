@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact Daniel Gallego for inquiries, store locations, and business hours.">
+  <meta name="keywords" content="Daniel Gallego, contact, store locations, business hours, fashion inquiries">
   <title>Contact</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="canonical" href="https://yourdomain.com/page.html">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* CSS ONLY FOR MAIN SECTION */
@@ -114,12 +118,33 @@ main th {
   color: #222;
 }
 
-</style>
+    .main-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      flex-wrap: wrap;
+      background: rgba(255, 255, 255, 0.15); /* transparent like index.html */
+      backdrop-filter: blur(6px);
+    }
+    .nav_links a {
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s;
+      text-decoration: none;
+    }
+    .nav_links a:hover {
+      color: #e63946;
+    }
+  </style>
 </head>
 <body>
   <header class="main-header">
     <picture>
-     <img class="logo" src="Images/logo.png" alt="Daniel Gallego Logo">
+     <a href="index.html">
+        <img class="logo" src="Images/logo.png" alt="Daniel Gallego Logo">
+      </a>
     </picture>
     <nav>
       <ul class="nav_links">
@@ -131,36 +156,45 @@ main th {
       </ul>
     </nav>
     <div class="cta">
-      <button>Shop Now</button>
+      <button onclick="location.href='product.html'">Shop Now</button>
     </div>
   </header>
 
   <main>
     <h1>Contact Our Stores</h1>
 
-    <section>
+    <section data-aos="fade-up">
       <h2>Store Locations</h2>
       <article>
         <h3>Johannesburg Store</h3>
         <p>123 Fashion Street, Braamfontein</p>
         <p>Phone: +27 11 123 4567</p>
         <p>Email: jhb@danielgallego.co.za</p>
+        <div style="width:100%;height:200px;margin:10px 0;">
+          <iframe src="https://www.google.com/maps?q=123+Fashion+Street,+Braamfontein,+Johannesburg,+South+Africa&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
       </article>
       <article>
         <h3>Cape Town Store</h3>
         <p>45 Style Avenue, V&A Waterfront</p>
         <p>Phone: +27 21 123 4567</p>
         <p>Email: ct@danielgallego.co.za</p>
+        <div style="width:100%;height:200px;margin:10px 0;">
+          <iframe src="https://www.google.com/maps?q=45+Style+Avenue,+V%26A+Waterfront,+Cape+Town,+South+Africa&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
       </article>
       <article>
         <h3>Durban Store</h3>
         <p>78 Trend Boulevard, Umhlanga</p>
         <p>Phone: +27 31 123 4567</p>
         <p>Email: dbn@danielgallego.co.za</p>
+        <div style="width:100%;height:200px;margin:10px 0;">
+          <iframe src="https://www.google.com/maps?q=78+Trend+Boulevard,+Umhlanga,+Durban,+South+Africa&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
       </article>
     </section>
 
-    <section>
+    <section data-aos="fade-up">
       <h2>Send Us a Message</h2>
       <form action="submit_contact.php" method="post">
         <label for="name">Full Name:</label>
@@ -184,7 +218,7 @@ main th {
       </form>
     </section>
 
-    <section>
+    <section data-aos="fade-up">
       <h2>Business Hours</h2>
       <table>
         <tr><th>Day</th><th>Hours</th></tr>
@@ -194,9 +228,66 @@ main th {
       </table>
     </section>
   </main>
+<!-- Add this before </body> -->
+<script>
+const contactForm = document.querySelector('form');
 
-  <footer>
-    <p>&copy; 2025 Daniel Gallego. All rights reserved.</p>
+// Prefill from localStorage if available
+window.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem('contactForm');
+  if (saved) {
+    const data = JSON.parse(saved);
+    if (data.name) document.getElementById('name').value = data.name;
+    if (data.email) document.getElementById('email').value = data.email;
+    if (data.subject) document.getElementById('subject').value = data.subject;
+    if (data.message) document.getElementById('message').value = data.message;
+  }
+});
+
+contactForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  // Basic validation
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const subject = document.getElementById('subject').value;
+  const message = document.getElementById('message').value;
+  const errors = [];
+
+  if (!name) errors.push('Name is required');
+  if (!email) errors.push('Email is required');
+  if (email && !/^\S+@\S+\.\S+$/.test(email)) errors.push('Invalid email format');
+
+  // Display errors
+  if (errors.length > 0) {
+    alert(`Please fix errors:\n${errors.join('\n')}`);
+    return;
+  }
+
+  // Save to localStorage
+  localStorage.setItem('contactForm', JSON.stringify({ name, email, subject, message }));
+
+  // Simulate successful AJAX submission (since PHP backend does not exist)
+  setTimeout(() => {
+    alert('Form submitted successfully!');
+    e.target.reset();
+    localStorage.removeItem('contactForm');
+  }, 500);
+
+  // If you have a backend, replace the above with a real fetch call.
+});
+</script>
+  <footer class="footer">
+    <div style="padding:1rem 0;">
+      <p>&copy; 2025 Daniel Gallego. All rights reserved.</p>
+      <p>Follow us:
+        <a href="#" style="color:#f6d365;">Facebook</a> |
+        <a href="#" style="color:#f6d365;">Instagram</a> |
+        <a href="#" style="color:#f6d365;">Twitter</a>
+      </p>
+      <p>Contact: <a href="mailto:info@danielgallego.co.za" style="color:#f6d365;">info@danielgallego.co.za</a> | +27 76 249 0517</p>
+      <p>Visit us in Johannesburg, Cape Town, Durban, Pretoria, Bloemfontein, eGqiberha</p>
+    </div>
   </footer>
 </body>
 </html>

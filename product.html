@@ -3,9 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Shop the latest collection of Daniel Gallego's premium apparel, inspired by African heritage and modern design.">
+  <meta name="keywords" content="Daniel Gallego, fashion, clothing, premium apparel, African heritage, modern design">
+  <meta name="author" content="Daniel Gallego">
   <title>Shop</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://yourdomain.com/page.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+  <!-- Add more font weights and a secondary font for headings -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
   <style>
     main { 
       background-color: whitesmoke;
@@ -75,6 +81,45 @@
       background-color: #222;
     }
 
+    /* Add this to your <style> section in product.html */
+    #cart-container {
+      background: #fff;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 1.5rem 1rem;
+      margin-bottom: 2rem;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #cart-container h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #222;
+    }
+    #cart-items {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem 0;
+    }
+    #cart-items li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #eee;
+      font-size: 1rem;
+    }
+    #cart-items li:last-child {
+      border-bottom: none;
+    }
+    #cart-total {
+      font-weight: bold;
+      text-align: right;
+      margin-bottom: 1rem;
+      color: #444;
+    }
+
     @media (min-width: 768px) {
       main {
         display: grid;
@@ -85,12 +130,59 @@
         grid-column: 1 / -1;
       }
     }
+
+    /* Animation for cart items */
+    @keyframes cartAnimation {
+      from { opacity: 0.5; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .cart-animate {
+      animation: cartAnimation 0.4s ease-out;
+    }
+
+    /* New styles for footer and search bar */
+    .footer {
+      background: transparent;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 0;
+      position: relative;
+      z-index: 10;
+    }
+
+    .footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .main-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      flex-wrap: wrap;
+      background: rgba(255, 255, 255, 0.15); /* transparent like index.html */
+      backdrop-filter: blur(6px);
+    }
+    .nav_links a {
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s;
+      text-decoration: none;
+    }
+    .nav_links a:hover {
+      color: #e63946;
+    }
   </style>
 </head>
 <body>
   <header class="main-header">
     <picture>
+      <a href="index.html">
         <img class="logo" src="Images/logo.png" alt="Daniel Gallego Logo">
+      </a>
     </picture>
     <nav>
       <ul class="nav_links">
@@ -102,24 +194,33 @@
       </ul>
     </nav>
     <div class="cta">
-      <button>Shop Now</button>
+      <button onclick="location.href='product.html'">Shop Now</button>
     </div>
   </header>
 
   <main>
     <h2>Our Collection</h2>
+    <p>Explore our latest collection of premium apparel, inspired by African heritage and modern design. Each piece is crafted with care to bring you unique styles that celebrate culture and individuality.</p>
 
-    <!-- Product 1 -->
-    <section>
-      <img src="Images/products/product1.jpeg" alt="Heritage Print Shirt">
-      <h3>Heritage Print Shirt</h3>
-      <p>Vibrant African-inspired button-up shirt</p>
-      <p><strong>R499.99</strong></p>
-      <button>Add to Cart</button>
-    </section>
+<!-- Cart Section -->
+<div id="cart-container">
+  <h2>Your Cart</h2>
+  <ul id="cart-items"></ul>
+  <div id="cart-total"></div>
+  <div id="paypal-button-container" style="margin-top: 1rem;"></div>
+</div>
+
+  <!-- Product 1 -->
+  <section data-aos="fade-up">
+    <img src="Images/products/product1.jpeg" alt="Heritage Print Shirt">
+    <h3>Heritage Print Shirt</h3>
+    <p>Vibrant African-inspired button-up shirt</p>
+    <p><strong>R499.99</strong></p>
+    <button>Add to Cart</button>
+  </section>
 
     <!-- Product 2 -->
-    <section>
+    <section data-aos="fade-up">
       <img src="Images/products/product2.jpeg" alt="Cape Town Linen Pants">
       <h3>Cape Town Linen Pants</h3>
       <p>Lightweight linen with traditional embroidery</p>
@@ -128,7 +229,7 @@
     </section>
 
     <!-- Product 3 -->
-    <section>
+    <section data-aos="fade-up">
       <img src="Images/products/product3.jpeg" alt="Kente Wrap Dress">
       <h3>Kente Wrap Dress</h3>
       <p>Elegant dress with authentic Kente accents</p>
@@ -137,7 +238,7 @@
     </section>
 
     <!-- Product 4 -->
-    <section>
+    <section data-aos="fade-up">
       <img src="Images/products/product4.jpeg" alt="Safari Denim Jacket">
       <h3>Safari Denim Jacket</h3>
       <p>Reinforced denim with beadwork details</p>
@@ -146,17 +247,286 @@
     </section>
 
     <!-- Product 5 -->
-    <section>
+    <section data-aos="fade-up">
       <img src="Images/products/product5.jpeg" alt="Zulu Beaded Necklace">
       <h3>Zulu Beaded Necklace</h3>
       <p>Handcrafted by Zulu artisans</p>
       <p><strong>R349.99</strong></p>
       <button>Add to Cart</button>
     </section>
+
+<!-- Assume somewhere near the top: -->
+<script>
+const products = [
+  { name: "Heritage Print Shirt", price: 499.99, image: "Images/products/product1.jpeg", description: "Vibrant African-inspired button-up shirt" },
+  { name: "Cape Town Linen Pants", price: 649.99, image: "Images/products/product2.jpeg", description: "Lightweight linen with traditional embroidery" },
+  { name: "Kente Wrap Dress", price: 899.99, image: "Images/products/product3.jpeg", description: "Elegant dress with authentic Kente accents" },
+  { name: "Safari Denim Jacket", price: 1199.99, image: "Images/products/product4.jpeg", description: "Reinforced denim with beadwork details" },
+  { name: "Zulu Beaded Necklace", price: 349.99, image: "Images/products/product5.jpeg", description: "Handcrafted by Zulu artisans" }
+];
+
+let cart = [];
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Add to Cart buttons
+  const buttons = document.querySelectorAll("section button");
+  buttons.forEach((button, idx) => {
+    button.addEventListener("click", function() {
+      addToCart(idx);
+    });
+  });
+  updateCart();
+});
+
+function addToCart(productIndex) {
+    const product = products[productIndex];
+    // Check if already in cart
+    const found = cart.find(item => item.name === product.name);
+    if (found) {
+      found.qty += 1;
+    } else {
+      cart.push({ ...product, qty: 1 });
+    }
+    updateCart();
+  }
+
+  function renderPayPalButton() {
+    let total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+    document.getElementById('paypal-button-container').innerHTML = ""; // Clear previous button
+
+    if (total === 0) return; // Don't render if cart is empty
+
+    paypal.Buttons({
+      createOrder: function(data, actions) {
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: total.toFixed(2)
+            }
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          alert('Payment completed by ' + details.payer.name.given_name + '!');
+          cart = [];
+          updateCart();
+          renderPayPalButton();
+        });
+      }
+    }).render('#paypal-button-container');
+  }
+
+  // Update updateCart to call renderPayPalButton
+  function updateCart() {
+    const cartItems = document.getElementById("cart-items");
+    const cartTotal = document.getElementById("cart-total");
+    cartItems.innerHTML = "";
+    let total = 0;
+    cart.forEach((item, idx) => {
+      total += item.price * item.qty;
+      const li = document.createElement("li");
+      li.innerHTML = `
+        <span>${item.name} x${item.qty}</span>
+        <button style="background:#e74c3c;color:#fff;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;" onclick="removeFromCart(${idx})">Remove</button>
+      `;
+      cartItems.appendChild(li);
+    });
+    cartTotal.textContent = "Total: R" + total.toFixed(2);
+    renderPayPalButton();
+
+    // Add animation class
+    cartItems.classList.add('cart-animate');
+    setTimeout(() => cartItems.classList.remove('cart-animate'), 400);
+  }
+
+  function removeFromCart(idx) {
+    cart.splice(idx, 1);
+    updateCart();
+  }
+
+  function renderProducts(productArray) {
+    const list = document.querySelector('.product-list');
+    if (!list) return;
+    list.innerHTML = productArray.map(product => `
+      <div class="product-card">
+        <img src="${product.image}" alt="${product.name}">
+        <h3>${product.name}</h3>
+        <p>R${product.price}</p>
+        <button onclick='addToCart(${JSON.stringify(product)})'>Add to Cart</button>
+      </div>
+    `).join('');
+  }
+
+  // Initial render
+  renderProducts(products);
+</script>
+
+<!-- Place this at the bottom of your product list, before the footer -->
+<div id="product-search-bottom" style="margin: 2rem auto; max-width: 400px; text-align: center;">
+  <form id="bottom-product-search-form" style="display:flex;justify-content:center;align-items:center;">
+    <input type="text" class="product-search-input" id="bottomSearchInput" placeholder="Search products...">
+    <button type="submit" class="product-search-btn">Search</button>
+  </form>
+</div>
+<script>
+  // Filter only product items/cards using the products array and re-render
+  document.getElementById('bottom-product-search-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const query = document.getElementById('bottomSearchInput').value.trim().toLowerCase();
+    const filtered = products.filter(product =>
+      product.name.toLowerCase().includes(query) ||
+      (product.description && product.description.toLowerCase().includes(query))
+    );
+    renderProducts(filtered);
+  });
+</script>
+
   </main>
 
-  <footer>
+  <footer class="footer">
+  <div>
     <p>&copy; 2025 Daniel Gallego. All rights reserved.</p>
-  </footer>
+    <p>Follow us:
+      <a href="#">Facebook</a> |
+      <a href="#">Instagram</a> |
+      <a href="#">Twitter</a>
+    </p>
+    <p>Contact: <a href="mailto:info@danielgallego.co.za">info@danielgallego.co.za</a> | +27 76 249 0517</p>
+    <p>Visit us in Johannesburg, Cape Town, Durban, Pretoria, Bloemfontein, eGqiberha</p>
+  </div>
+</footer>
+
+  <div id="toast" style="display:none;position:fixed;bottom:30px;right:30px;background:#222;color:#fff;padding:1rem 2rem;border-radius:8px;z-index:9999;"></div>
+
+  <script>
+// Product data
+const products = [
+  { name: "Heritage Print Shirt", price: 499.99 },
+  { name: "Cape Town Linen Pants", price: 649.99 },
+  { name: "Kente Wrap Dress", price: 899.99 },
+  { name: "Safari Denim Jacket", price: 1199.99 },
+  { name: "Zulu Beaded Necklace", price: 349.99 }
+];
+
+let cart = [];
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Add to Cart buttons
+  const buttons = document.querySelectorAll("section button");
+  buttons.forEach((button, idx) => {
+    button.addEventListener("click", function() {
+      addToCart(idx);
+    });
+  });
+  updateCart();
+});
+
+function addToCart(productIndex) {
+    const product = products[productIndex];
+    // Check if already in cart
+    const found = cart.find(item => item.name === product.name);
+    if (found) {
+      found.qty += 1;
+    } else {
+      cart.push({ ...product, qty: 1 });
+    }
+    updateCart();
+  }
+
+  function renderPayPalButton() {
+    let total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+    document.getElementById('paypal-button-container').innerHTML = ""; // Clear previous button
+
+    if (total === 0) return; // Don't render if cart is empty
+
+    paypal.Buttons({
+      createOrder: function(data, actions) {
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: total.toFixed(2)
+            }
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          alert('Payment completed by ' + details.payer.name.given_name + '!');
+          cart = [];
+          updateCart();
+          renderPayPalButton();
+        });
+      }
+    }).render('#paypal-button-container');
+  }
+
+  // Update updateCart to call renderPayPalButton
+  function updateCart() {
+    const cartItems = document.getElementById("cart-items");
+    const cartTotal = document.getElementById("cart-total");
+    cartItems.innerHTML = "";
+    let total = 0;
+    cart.forEach((item, idx) => {
+      total += item.price * item.qty;
+      const li = document.createElement("li");
+      li.innerHTML = `
+        <span>${item.name} x${item.qty}</span>
+        <button style="background:#e74c3c;color:#fff;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;" onclick="removeFromCart(${idx})">Remove</button>
+      `;
+      cartItems.appendChild(li);
+    });
+    cartTotal.textContent = "Total: R" + total.toFixed(2);
+    renderPayPalButton();
+
+    // Add animation class
+    cartItems.classList.add('cart-animate');
+    setTimeout(() => cartItems.classList.remove('cart-animate'), 400);
+  }
+
+  function removeFromCart(idx) {
+    cart.splice(idx, 1);
+    updateCart();
+  }
+
+  function renderProducts(productArray) {
+    const list = document.querySelector('.product-list');
+    if (!list) return;
+    list.innerHTML = productArray.map(product => `
+      <div class="product-card">
+        <img src="${product.image}" alt="${product.name}">
+        <h3>${product.name}</h3>
+        <p>R${product.price}</p>
+        <button onclick='addToCart(${JSON.stringify(product)})'>Add to Cart</button>
+      </div>
+    `).join('');
+  }
+
+  // Initial render
+  renderProducts(products);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<script>
+  // Initialize lightbox
+  lightbox.option({
+    'resizeDuration': 200,
+    'wrapAround': true
+  });
+
+  // Update image links
+  document.querySelectorAll('section img').forEach(img => {
+    const link = document.createElement('a');
+    link.href = img.src;
+    link.setAttribute('data-lightbox', 'products');
+    link.appendChild(img.cloneNode());
+    img.parentNode.replaceChild(link, img);
+  });
+</script>
+  <script src="https://www.paypal.com/sdk/js?client-id=ARuibNRaoN_yQfKAF8PurJW8XfTtW5OVRI5etuIjHN2nMMwAHwRR2Q259-N9i49GdfNX-okgD1t_D6WM&currency=ZAR"></script>
+  <script>
+    // Initialize PayPal button
+    paypal.Buttons().render('#paypal-button-container');
+  </script>
+<script src="https://www.paypal.com/sdk/js?client-id=ARuibNRaoN_yQfKAF8PurJW8XfTtW5OVRI5etuIjHN2nMMwAHwRR2Q259-N9i49GdfNX-okgD1t_D6WM&currency=ZAR"></script>
 </body>
 </html>

@@ -3,9 +3,13 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Enquiry</title>
-        <meta name="description" content="">
+        <meta name="description" content="enquire about Daniel Gallego's fashion collections, collaborations, and more.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="Daniel Gallego, fashion, clothing, premium apparel, African heritage, modern design">
+        <meta name="author" content="Daniel Gallego">
+        <link rel="canonical" href="https://yourdomain.com/page.html">
         <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
         <style>
             main {
               background-color: #f5f5f5;
@@ -112,18 +116,39 @@
               background-color: #f0f0f0;
               color: #222;
             }
+            .main-header {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 1rem 2rem;
+              box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+              flex-wrap: wrap;
+              background: rgba(255, 255, 255, 0.15); /* transparent like index.html */
+              backdrop-filter: blur(6px);
+            }
+            .nav_links a {
+              color: #fff;
+              font-weight: 500;
+              transition: color 0.3s;
+              text-decoration: none;
+            }
+            .nav_links a:hover {
+              color: #e63946;
+            }
           </style>
     </head>
     <body>
         <header class="main-header">
           <picture>
+        <a href="index.html">
         <img class="logo" src="Images/logo.png" alt="Daniel Gallego Logo">
+      </a>
           </picture>
           <nav>
             <ul class="nav_links">
               <li><a href="index.html">Home</a></li>
               <li><a href="about.html">About</a></li>
-              <li><a href="product.html">Services</a></li>
+              <li><a href="product.html">Shop</a></li>
               <li><a href="contact.html">Contact</a></li>
               <li><a href="enquiry.html">Enquiry</a></li>
             </ul>
@@ -196,13 +221,80 @@
                 <button type="reset">Clear Form</button>
             </form>
         </main>
-        <footer>
-            <p>&copy; 2025 Daniel Gallego Clothing. All rights reserved.</p>
-            <p>Follow us on social media: 
-                <a href="#">Facebook</a> | 
-                <a href="#">Instagram</a> | 
-                <a href="#">Twitter</a>
-            </p>
+        <!-- Add this before </body> -->
+<script>
+const enquiryForm = document.querySelector('form');
+
+// Prefill from localStorage if available
+window.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem('enquiryForm');
+  if (saved) {
+    const data = JSON.parse(saved);
+    if (data.name) document.getElementById('name').value = data.name;
+    if (data.email) document.getElementById('email').value = data.email;
+    if (data.phone) document.getElementById('phone').value = data.phone;
+    if (data.product) document.getElementById('product').value = data.product;
+    if (data.size) document.getElementById('size').value = data.size;
+    if (data.quantity) document.getElementById('quantity').value = data.quantity;
+    if (data.message) document.getElementById('message').value = data.message;
+    if (data['contact-method']) {
+      document.querySelectorAll('input[name="contact-method"]').forEach(radio => {
+        if (radio.value === data['contact-method']) radio.checked = true;
+      });
+    }
+  }
+});
+
+enquiryForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  // Basic validation
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const phone = document.getElementById('phone').value;
+  const product = document.getElementById('product').value;
+  const size = document.getElementById('size').value;
+  const quantity = document.getElementById('quantity').value;
+  const message = document.getElementById('message').value;
+  const contactMethod = document.querySelector('input[name="contact-method"]:checked').value;
+  const errors = [];
+
+  if (!name) errors.push('Name is required');
+  if (!email) errors.push('Email is required');
+  if (email && !/^\S+@\S+\.\S+$/.test(email)) errors.push('Invalid email format');
+
+  // Display errors
+  if (errors.length > 0) {
+    alert(`Please fix errors:\n${errors.join('\n')}`);
+    return;
+  }
+
+  // Save to localStorage
+  localStorage.setItem('enquiryForm', JSON.stringify({
+    name, email, phone, product, size, quantity, message, 'contact-method': contactMethod
+  }));
+
+  // Simulate successful AJAX submission (since PHP backend does not exist)
+  setTimeout(() => {
+    alert('Form submitted successfully!');
+    e.target.reset();
+    localStorage.removeItem('enquiryForm');
+  }, 500);
+
+  // If you have a backend, replace the above with a real fetch call.
+});
+</script>
+        <footer class="footer">
+            <div style="padding:1rem 0;">
+              <p>&copy; 2025 Daniel Gallego. All rights reserved.</p>
+              <p>Follow us:
+                <a href="#" style="color:#f6d365;">Facebook</a> |
+                <a href="#" style="color:#f6d365;">Instagram</a> |
+                <a href="#" style="color:#f6d365;">Twitter</a>
+              </p>
+              <p>Contact: <a href="mailto:info@danielgallego.co.za" style="color:#f6d365;">info@danielgallego.co.za</a> | +27 76 249 0517</p>
+              <p>Visit us in Johannesburg, Cape Town, Durban, Pretoria, Bloemfontein, eGqiberha</p>
+            </div>
         </footer>
     </body>
-</html>    
+</html>

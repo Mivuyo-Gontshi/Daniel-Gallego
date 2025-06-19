@@ -70,3 +70,28 @@ For inquiries about this project:
 Daniel Gallego Website – Developed by Mivuyo Gontshi
 For educational purposes, 2025.
 **Daniel Gallego** © 2025 - Premium South African Fashion
+## Part 3 Updates
+
+### Implemented Features
+- AJAX form submission with validation
+- Lightbox product gallery
+- Product search functionality
+- SEO meta tags and optimizations
+- Transparent and modern navigation/footer
+- Improved accessibility and color contrast
+- Responsive, professional button and search bar styling
+- Local storage for enquiry and contact forms
+
+### Changelog
+| Date       | Change Description                     |
+|------------|----------------------------------------|
+| 2025-06-18 | Added client-side form validation      |
+| 2025-06-18 | Implemented lightbox for product images|
+| 2025-06-18 | Added product search functionality     |
+| 2025-06-18 | Improved footer and navigation styling |
+| 2025-06-18 | Enhanced accessibility and color contrast|
+| 2025-06-18 | Added local storage for forms          |
+
+### License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

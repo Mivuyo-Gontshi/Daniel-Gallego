@@ -2,15 +2,152 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="description" content="Daniel Gallego - Contemporary African-inspired fashion. Premium clothing for men and women.">
+  <meta name="keywords" content="Daniel Gallego, fashion, clothing, premium apparel, African heritage, modern design">
+  <meta name="author" content="Daniel Gallego">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Daniel Gallego Clothing</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://yourdomain.com/page.html">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body, main, .hero, section, ul, li, p, h1, h2, h3 {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 1.22rem;
+      color: #fff;
+      letter-spacing: 0.01em;
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: #fff !important; /* force white for all headings */
+      letter-spacing: 0.02em;
+    }
+    .hero h1, .hero h2, .hero h3 {
+      color: #fff !important;
+    }
+    .hero p {
+      color: #fff !important; /* force white for hero paragraph */
+    }
+    .info-list {
+      margin-top: 1.5rem;
+      font-size: 1.22rem;
+      color: #f6f6f6;
+    }
+    .info-list li {
+      margin-bottom: 0.7rem;
+    }
+    .main-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      flex-wrap: wrap;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .logo {
+      max-width: 100px;
+      height: auto;
+    }
+    .nav_links {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+    }
+    .nav_links a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav_links a:hover {
+      color: #e63946;
+    }
+    .cta button {
+      background: #e63946;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      padding: 0.75rem 2rem;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      margin-top: 0;
+    }
+    .cta button:hover {
+      background: #d62828;
+      transform: scale(1.05);
+    }
+    .browse-btn {
+      display: inline-block;
+      background: #e63946;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      padding: 0.75rem 2.2rem;
+      font-size: 1.1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .browse-btn:hover {
+      background: #d62828;
+      transform: scale(1.05);
+      color: #fff;
+      text-decoration: none;
+    }
+    .footer {
+      text-align: center;
+      padding: 2rem 0 1rem 0;
+      margin-top: 2rem;
+      background: rgba(24,24,24,0.3); /* transparent */
+      color: #fff;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(4px);
+    }
+    .footer a {
+      color: #f6d365;
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav_links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        margin: 1rem 0;
+      }
+      .cta button {
+        width: 100%;
+      }
+    }
+    @media (max-width: 480px) {
+      .logo {
+        max-width: 75px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="main-header">
     <picture>
-      <img class="logo" src="Images/logo.png" alt="Daniel Gallego Logo">
+      <a href="index.html">
+        <img class="logo" src="Images/logo.png" alt="Daniel Gallego Logo">
+      </a>
     </picture>
     <nav>
       <ul class="nav_links">
@@ -22,7 +159,7 @@
       </ul>
     </nav>
     <div class="cta">
-      <button>Shop Now</button>
+      <button onclick="location.href='product.html'">Shop Now</button>
     </div>
   </header>
 
@@ -31,32 +168,56 @@
       <h1>Welcome to Daniel Gallego</h1>
       <p>Where passion meets fashion. Discover premium style for every occasion.</p>
     </section>
-  
-    <section>
+
+    <section data-aos="fade-up">
       <h2>Our Mission</h2>
       <p>At Daniel Gallego, we believe fashion is more than what you wear — it's a reflection of identity, culture, and confidence. Our mission is to empower individuals through timeless and trend-setting apparel that celebrates self-expression and sophistication.</p>
     </section>
-  
+
     <section>
       <h2>Why Choose Us?</h2>
-      <ul>
+      <ul class="info-list">
         <li><strong>Premium Quality:</strong> Every piece is crafted with care and high-grade materials.</li>
         <li><strong>Modern Designs:</strong> Fashion-forward collections for men and women.</li>
         <li><strong>Customer Focused:</strong> Exceptional service and support, online and in-store.</li>
+        <li><strong>Ethical Sourcing:</strong> We prioritize sustainable and responsible sourcing for all our materials.</li>
+        <li><strong>Multiple Locations:</strong> Visit us in Johannesburg, Cape Town, Durban, Pretoria, Bloemfontein, and eGqiberha.</li>
       </ul>
     </section>
-  
+
     <section>
       <h2>Explore Our Latest Collection</h2>
-      <p>From streetwear to formalwear, our 2025 line delivers fresh looks and timeless essentials. Visit our <a href="services.html">Services</a> page to learn more or <a href="enquiry.html">send us an enquiry</a> to personalize your shopping experience.</p>
+      <p>From streetwear to formalwear, our 2025 line delivers fresh looks and timeless essentials. Visit our <a href="product.html" style="color:#f6d365;">Shop</a> page to learn more or <a href="enquiry.html" style="color:#f6d365;">send us an enquiry</a> to personalize your shopping experience.</p>
       <div style="text-align:center; margin-top: 20px;">
-        <button onclick="location.href='services.html'">Browse Collection</button>
+        <a href="product.html" class="browse-btn">Browse Collection</a>
       </div>
+    </section>
+    <section>
+      <h2>Contact & Store Information</h2>
+      <ul class="info-list">
+        <li><strong>Email:</strong> info@danielgallego.co.za</li>
+        <li><strong>Phone:</strong> +27 76 249 0517</li>
+        <li><strong>Physical Stores:</strong> Johannesburg, Cape Town, Durban, Pretoria, Bloemfontein, eGqiberha</li>
+        <li><strong>Business Hours:</strong> Mon-Fri 9am-6pm, Sat 9am-4pm, Sun 10am-2pm</li>
+      </ul>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Daniel Gallego. All rights reserved.</p>
+  <footer class="footer">
+    <div>
+      <p>&copy; 2025 Daniel Gallego. All rights reserved.</p>
+      <p>Follow us:
+        <a href="#">Facebook</a> |
+        <a href="#">Instagram</a> |
+        <a href="#">Twitter</a>
+      </p>
+      <p>Contact: <a href="mailto:info@danielgallego.co.za">info@danielgallego.co.za</a> | +27 76 249 0517</p>
+      <p>Visit us in Johannesburg, Cape Town, Durban, Pretoria, Bloemfontein, eGqiberha</p>
+    </div>
   </footer>
+  <!-- Move scripts to just before </body> for faster rendering -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+  <script src="animations.js" defer></script>
 </body>
 </html>

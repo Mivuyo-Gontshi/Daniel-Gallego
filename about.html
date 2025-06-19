@@ -3,14 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="About Daniel Gallego - Contemporary African-inspired fashion brand.">
+  <meta name="keywords" content="Daniel Gallego, fashion, clothing, premium apparel, African heritage, modern design">
   <title>About</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    body, main, section, p, h1, h2, h3 {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 1.22rem; /* increased font size */
+      color: #fff; /* white text */
+      letter-spacing: 0.01em;
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: #fff !important; /* force white for all headings */
+      letter-spacing: 0.02em;
+    }
+    .hero h1, .hero h2, .hero h3 {
+      color: #fff !important;
+    }
+    .hero p {
+      color: #fff !important; /* force white for hero paragraph */
+    }
+    .about-list {
+      margin-top: 1.2rem;
+      font-size: 1.22rem;
+      color: #f6f6f6;
+    }
+    .about-list li {
+      margin-bottom: 0.7rem;
+    }
+    .main-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      flex-wrap: wrap;
+      background: rgba(255, 255, 255, 0.15); /* transparent like index.html */
+      backdrop-filter: blur(6px);
+    }
+    .nav_links a {
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s;
+      text-decoration: none;
+    }
+    .nav_links a:hover {
+      color: #e63946;
+    }
+    .footer {
+      text-align: center;
+      padding: 2rem 0 1rem 0;
+      margin-top: 2rem;
+      background: rgba(24,24,24,0.3); /* transparent */
+      color: #fff;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(4px);
+    }
+    .footer a {
+      color: #f6d365;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
   <header class="main-header">
     <picture>
+      <a href="index.html">
         <img class="logo" src="Images/logo.png" alt="Daniel Gallego Logo">
+      </a>
     </picture>
     <nav>
       <ul class="nav_links">
@@ -22,24 +86,60 @@
       </ul>
     </nav>
     <div class="cta">
-      <button>Shop Now</button>
+      <button onclick="location.href='product.html'">Shop Now</button>
     </div>
   </header>
 
   <main>
     <section class="hero">
-        <font size="5"><h1>Organisation's history</h1></font>
-        <font size="4"><p>Founded in 2020 in Cape Town, Daniel Gallego is a contemporary clothing retail brand that merges African heritage with modern design.
-             The brand began as a small boutique offering handcrafted apparel and has since expanded to multiple physical stores across Johannesburg, Pretoria, Cape Town, Bloemfontein, Durban and eGqiberha(formally known as Port Elizabeth).
-             Known for its vibrant prints, ethical sourcing, and affordability, Daniel Gallego aims to redefine South African fashion for a global audience.</p></font>
-        <font size="5"><h1>Mission</h1></font>
-            <font size="4"><p>“To empower individuals through contemporary, affordable fashion that celebrates African heritage.”</p></font> 
-        <font size="5"><h1>Vision</h1></font>
-        <font size="4"> <p>“To become South Africa’s leading online destination for modern, culturally-inspired apparel.”</p></font> 
+      <h1>Organisation's History</h1>
+      <p>Founded in 2020 in Cape Town, Daniel Gallego is a contemporary clothing retail brand that merges African heritage with modern design.
+        The brand began as a small boutique offering handcrafted apparel and has since expanded to multiple physical stores across Johannesburg, Pretoria, Cape Town, Bloemfontein, Durban and eGqiberha (formerly known as Port Elizabeth).
+        Known for its vibrant prints, ethical sourcing, and affordability, Daniel Gallego aims to redefine South African fashion for a global audience.</p>
+    </section>
+    <section>
+      <h1>Mission</h1>
+      <p>“To empower individuals through contemporary, affordable fashion that celebrates African heritage.”</p>
+    </section>
+    <section>
+      <h1>Vision</h1>
+      <p>“To become South Africa’s leading online destination for modern, culturally-inspired apparel.”</p>
+    </section>
+    <section>
+      <h2>Our Values</h2>
+      <ul class="about-list">
+        <li><strong>Inclusivity:</strong> Celebrating diversity and African heritage in every design.</li>
+        <li><strong>Quality:</strong> Commitment to premium materials and craftsmanship.</li>
+        <li><strong>Affordability:</strong> Making fashion accessible to all.</li>
+        <li><strong>Ethical Sourcing:</strong> Supporting local artisans and sustainable practices.</li>
+        <li><strong>Innovation:</strong> Blending tradition with modern trends.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Meet the Team</h2>
+      <p>Our passionate team of designers, tailors, and customer service professionals work together to bring you the best of South African fashion. We are proud to be a locally owned and operated business.</p>
+    </section>
+    <section>
+      <h2>Contact & Store Information</h2>
+      <ul class="about-list">
+        <li><strong>Email:</strong> info@danielgallego.co.za</li>
+        <li><strong>Phone:</strong> +27 76 249 0517</li>
+        <li><strong>Physical Stores:</strong> Johannesburg, Cape Town, Durban, Pretoria, Bloemfontein, eGqiberha</li>
+      </ul>
+    </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Daniel Gallego. All rights reserved.</p>
+  <footer class="footer">
+    <div>
+      <p>&copy; 2025 Daniel Gallego. All rights reserved.</p>
+      <p>Follow us:
+        <a href="#">Facebook</a> |
+        <a href="#">Instagram</a> |
+        <a href="#">Twitter</a>
+      </p>
+      <p>Contact: <a href="mailto:info@danielgallego.co.za">info@danielgallego.co.za</a> | +27 76 249 0517</p>
+      <p>Visit us in Johannesburg, Cape Town, Durban, Pretoria, Bloemfontein, eGqiberha</p>
+    </div>
   </footer>
 </body>
 </html>
